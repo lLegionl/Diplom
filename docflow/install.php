@@ -23,49 +23,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // Создаем таблицы
             $pdo->exec("
-                CREATE TABLE users (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    username VARCHAR(50) NOT NULL UNIQUE,
-                    password VARCHAR(255) NOT NULL,
-                    full_name VARCHAR(100) NOT NULL,
-                    email VARCHAR(100) NOT NULL UNIQUE,
-                    role ENUM('admin', 'user', 'manager') DEFAULT 'user',
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    last_login TIMESTAMP NULL
-                )
+            CREATE TABLE `users` (
+            `id` int NOT NULL,
+            `username` varchar(50) NOT NULL,
+            `password` varchar(255) NOT NULL,
+            `full_name` varchar(100) NOT NULL,
+            `email` varchar(100) NOT NULL,
+            `role` enum('admin','user','manager') DEFAULT 'user',
+            `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+            `last_login` timestamp NULL DEFAULT NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
             ");
             
             $pdo->exec("
-                CREATE TABLE documents (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    doc_number VARCHAR(50) NOT NULL UNIQUE,
-                    title VARCHAR(255) NOT NULL,
-                    doc_type ENUM('Договор', 'Приказ', 'Заявление', 'Счет', 'Акт') NOT NULL,
-                    description TEXT,
-                    file_path VARCHAR(255),
-                    status ENUM('Черновик', 'На согласовании', 'Утвержден', 'Отклонен', 'Архив') DEFAULT 'Черновик',
-                    created_by INT NOT NULL,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    updated_at TIMESTAMP NULL,
-                    FOREIGN KEY (created_by) REFERENCES users(id)
-                )
+            CREATE TABLE `documents` (
+            `id` int NOT NULL,
+            `doc_number` varchar(50) NOT NULL,
+            `title` varchar(255) NOT NULL,
+            `doc_type` enum('Договор','Приказ','Заявление','Счет','Акт') NOT NULL,
+            `description` text,
+            `file_path` varchar(255) DEFAULT NULL,
+            `status` enum('Черновик','На согласовании','Утвержден','Отклонен','Архив') DEFAULT 'Черновик',
+            `created_by` int NOT NULL,
+            `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+            `updated_at` timestamp NULL DEFAULT NULL,
+            `direction` enum('Входящие','Исходящие','Внутренние','Архив') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'Входящие'
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
             ");
             
-            $pdo->exec("
-                CREATE TABLE tasks (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    title VARCHAR(255) NOT NULL,
-                    description TEXT,
-                    assigned_to INT NOT NULL,
-                    created_by INT NOT NULL,
-                    due_date DATE,
-                    status ENUM('Новая', 'В работе', 'Завершена', 'Отменена') DEFAULT 'Новая',
-                    priority ENUM('Низкий', 'Средний', 'Высокий') DEFAULT 'Средний',
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (assigned_to) REFERENCES users(id),
-                    FOREIGN KEY (created_by) REFERENCES users(id)
-                )
-            ");
             
             // Создаем администратора
             $hashed_password = password_hash($admin_password, PASSWORD_DEFAULT);

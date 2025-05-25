@@ -1,3 +1,2 @@
 # Diplom
-Для начало работы домена Diplom потребуется создать бд "docflow" и изменить строчку в config.php - поставить свой хост БД
-затем запустить install.php . Методом - https://diplom/docflow/install.php
+Для начало запустить изменить в config.php хост БД, затем запустить - https://diplom/docflow/install.php. 
