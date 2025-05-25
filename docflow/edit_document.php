@@ -124,44 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактировать документ | <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Все стили из create_document.php плюс дополнительные */
-        
-        .file-preview {
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: rgba(10, 25, 47, 0.5);
-            border-radius: 5px;
-            border: 1px dashed rgba(100, 255, 218, 0.3);
-        }
-        
-        .file-preview-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .file-preview-info i {
-            font-size: 2rem;
-            margin-right: 1rem;
-            color: var(--light-blue);
-        }
-        
-        .file-preview-actions {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-top: 1rem;
-        }
-        
-        .checkbox-group input {
-            margin-right: 0.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>

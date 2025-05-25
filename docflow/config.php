@@ -18,7 +18,7 @@ function verify_csrf_token($token) {
     return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
 // Настройки базы данных
-define('DB_HOST', 'MySQL-8.2');
+define('DB_HOST', 'MySQL-8.2'); // Хост Бд
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'docflow');

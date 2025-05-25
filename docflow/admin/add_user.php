@@ -80,9 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Добавить пользователя | <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Все стили из предыдущих форм */
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php include '../includes/header.php'; ?>

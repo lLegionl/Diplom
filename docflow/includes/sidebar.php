@@ -18,7 +18,7 @@
             <a href="tasks.php" class="nav-link">
                 <i class="fas fa-tasks"></i>
                 Задачи
-                <?php if ($task_count > 0): ?>
+                <?php if (!empty($task_count) && $task_count > 0): ?>
                     <span style="margin-left: auto; background: var(--light-blue); color: var(--dark-blue); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;"><?php echo $task_count; ?></span>
                 <?php endif; ?>
             </a>
@@ -36,11 +36,17 @@
             </a>
         </li>
         <?php if ($_SESSION['user_role'] === 'admin'): ?>
-        <li class="nav-item">
-            <a href="admin/" class="nav-link">
+        <li class="nav-item" id="admin-menu">
+            <div class="nav-link">
                 <i class="fas fa-cog"></i>
-                Администрирование
-            </a>
+                Админ-меню
+                <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.8rem;"></i>
+            </div>
+            <ul class="dropdown-menu">
+                <li><a href="admin/users.php">Пользователи</a></li>
+                <li><a href="admin/add_user.php">Добавление пользователя</a></li>
+                <li><a href="user.php"></a></li>
+            </ul>
         </li>
         <?php endif; ?>
     </ul>
