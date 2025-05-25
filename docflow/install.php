@@ -24,30 +24,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Создаем таблицы
             $pdo->exec("
             CREATE TABLE `users` (
-            `id` int NOT NULL,
-            `username` varchar(50) NOT NULL,
-            `password` varchar(255) NOT NULL,
-            `full_name` varchar(100) NOT NULL,
-            `email` varchar(100) NOT NULL,
-            `role` enum('admin','user','manager') DEFAULT 'user',
-            `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-            `last_login` timestamp NULL DEFAULT NULL
+                `id` int NOT NULL AUTO_INCREMENT,
+                `username` varchar(50) NOT NULL,
+                `password` varchar(255) NOT NULL,
+                `full_name` varchar(100) NOT NULL,
+                `email` varchar(100) NOT NULL,
+                `role` enum('admin','user','manager') DEFAULT 'user',
+                `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+                `last_login` timestamp NULL DEFAULT NULL,
+                PRIMARY KEY (`id`),
+                UNIQUE KEY `username` (`username`),
+                UNIQUE KEY `email` (`email`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
             ");
             
             $pdo->exec("
             CREATE TABLE `documents` (
-            `id` int NOT NULL,
-            `doc_number` varchar(50) NOT NULL,
-            `title` varchar(255) NOT NULL,
-            `doc_type` enum('Договор','Приказ','Заявление','Счет','Акт') NOT NULL,
-            `description` text,
-            `file_path` varchar(255) DEFAULT NULL,
-            `status` enum('Черновик','На согласовании','Утвержден','Отклонен','Архив') DEFAULT 'Черновик',
-            `created_by` int NOT NULL,
-            `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-            `updated_at` timestamp NULL DEFAULT NULL,
-            `direction` enum('Входящие','Исходящие','Внутренние','Архив') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'Входящие'
+                `id` int NOT NULL AUTO_INCREMENT,
+                `doc_number` varchar(50) NOT NULL,
+                `title` varchar(255) NOT NULL,
+                `doc_type` enum('Договор','Приказ','Заявление','Счет','Акт') NOT NULL,
+                `description` text,
+                `file_path` varchar(255) DEFAULT NULL,
+                `status` enum('Черновик','На согласовании','Утвержден','Отклонен','Архив') DEFAULT 'Черновик',
+                `created_by` int NOT NULL,
+                `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+                `updated_at` timestamp NULL DEFAULT NULL,
+                `direction` enum('Входящие','Исходящие','Внутренние','Архив') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'Входящие',
+                PRIMARY KEY (`id`),
+                UNIQUE KEY `doc_number` (`doc_number`),
+                KEY `created_by` (`created_by`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
             ");
             

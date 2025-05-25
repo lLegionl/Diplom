@@ -100,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <button type="submit" class="btn">Зарегистрироваться</button>
+            <a href="login.php">Есть аккаунт?</a>
         </form>
     </div>
 </body>
