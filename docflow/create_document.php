@@ -31,21 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if (!isset($error)) {
         try {
-            $stmt = $pdo->prepare("
-                INSERT INTO documents 
-                (doc_number, title, doc_type, description, file_path, status, created_by) 
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            ");
-            $stmt->execute([
-                $doc_number, 
-                $title, 
-                $doc_type, 
-                $description, 
-                $file_path, 
-                $status, 
-                $user['id']
-            ]);
-            
+                $stmt = $pdo->prepare("
+                    INSERT INTO documents 
+                    (doc_number, title, doc_type, description, file_path, status, created_by, direction) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ");
+                $stmt->execute([
+                    $doc_number, 
+                    $title, 
+                    $doc_type, 
+                    $description, 
+                    $file_path, 
+                    $status, 
+                    $user['id'],
+                    $_POST['direction']
+                ]);
+                            
             $_SESSION['success'] = "Документ успешно создан";
             header('Location: ' . URL_ROOT . '/documents.php');
             exit();
@@ -101,6 +102,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <option value="Заявление">Заявление</option>
                             <option value="Счет">Счет</option>
                             <option value="Акт">Акт</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direction" class="form-label">Направление</label>
+                        <select id="direction" name="direction" class="form-control" required>
+                            <option value="<?php echo DOC_INCOMING; ?>">Входящий</option>
+                            <option value="<?php echo DOC_OUTGOING; ?>">Исходящий</option>
+                            <option value="<?php echo DOC_INTERNAL; ?>" selected>Внутренний</option>
                         </select>
                     </div>
                     

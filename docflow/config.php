@@ -29,6 +29,11 @@ define('APP_ROOT', dirname(dirname(__FILE__)));
 define('URL_ROOT', 'http://diplom/docflow');
 define('UPLOAD_DIR', APP_ROOT . '/uploads/');
 
+// Настройки потока док-ов
+define('DOC_INCOMING', 'Входящие');
+define('DOC_OUTGOING', 'Исходящие');
+define('DOC_INTERNAL', 'Внутренние');
+
 // Инициализация сессии
 session_start();
 

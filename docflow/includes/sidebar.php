@@ -1,20 +1,31 @@
 <?php if (!defined('APP_NAME')) die(); ?>
 <aside class="sidebar">
     <ul class="nav-menu">
-        <li class="nav-item" id="documents-menu">
-            <div class="nav-link">
-                <i class="fas fa-file-alt"></i>
-                Документы
-                <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.8rem;"></i>
-            </div>
-            <ul class="dropdown-menu">
-                <li><a href="documents.php?type=Входящие"><i class="fas fa-inbox"></i> Входящие</a></li>
-                <li><a href="documents.php?type=Исходящие"><i class="fas fa-paper-plane"></i> Исходящие</a></li>
-                <li><a href="documents.php?type=Внутренние"><i class="fas fa-file-signature"></i> Внутренние</a></li>
-                <li><a href="documents.php?status=Архив"><i class="fas fa-archive"></i> Архив</a></li>
-            </ul>
-        </li>
         <li class="nav-item">
+            <a href="documents.php" class="nav-link">
+                <i class="fas fa-list"></i> 
+                Все документы</a></li>
+        <li class="nav-item">
+            <a href="documents_show.php?direction=Входящие" class="nav-link">
+                <i class="fas fa-inbox"></i> 
+                Входящие
+            </a></li>
+        <li class="nav-item">
+            <a href="documents_show.php?direction=Исходящие" class="nav-link">
+                <i class="fas fa-paper-plane"></i>
+                Исходящие
+            </a></li>
+        <li class="nav-item">
+            <a href="documents_show.php?direction=Внутренние" class="nav-link">
+                <i class="fas fa-building"></i> 
+                Внутренние
+            </a></li>
+        <li class="nav-item" class="nav-link">
+            <a href="documents_show.php?direction=Архив" class="nav-link">
+                <i class="fas fa-archive"></i> 
+                Архив
+            </a></li>
+        <!-- <li class="nav-item">
             <a href="tasks.php" class="nav-link">
                 <i class="fas fa-tasks"></i>
                 Задачи
@@ -34,7 +45,7 @@
                 <i class="fas fa-chart-bar"></i>
                 Отчеты
             </a>
-        </li>
+        </li> -->
         <?php if ($_SESSION['user_role'] === 'admin'): ?>
         <li class="nav-item" id="admin-menu">
             <div class="nav-link">

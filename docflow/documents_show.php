@@ -10,37 +10,23 @@ $per_page = 10; // Количество документов на страниц
 $offset = ($page - 1) * $per_page;
 
 // Фильтры из GET-параметров
-$type_filter = isset($_GET['type']) ? sanitize($_GET['type']) : '';
-$status_filter = isset($_GET['status']) ? sanitize($_GET['status']) : '';
-$search_query = isset($_GET['search']) ? sanitize($_GET['search']) : '';
 $direction_filter = isset($_GET['direction']) ? sanitize($_GET['direction']) : '';
 // Формируем SQL запрос с учетом фильтров
 $sql = "SELECT d.*, u.full_name as creator FROM documents d JOIN users u ON d.created_by = u.id WHERE d.id>=1";
 $params = [];
 
 // Добавляем условия фильтрации
-if (!empty($type_filter)) {
-    $sql .= " AND d.doc_type = ?";
-    $params[] = $type_filter;
-}
-
-if (!empty($status_filter)) {
-    $sql .= " AND d.status = ?";
-    $params[] = $status_filter;
-}
-
-if (!empty($search_query)) {
-    $search_param = "%$search_query%";
-    $sql .= " AND (d.doc_number LIKE ? OR d.title LIKE ? OR d.description LIKE ?)";
-    $params[] = $search_param;
-    $params[] = $search_param;
-    $params[] = $search_param;
-}
 
 if (!empty($direction_filter)) {
+        if ($direction_filter=='Архив') {
+    $sql .= " AND d.status = ?";
+        } else {
     $sql .= " AND d.direction = ?";
+        }
     $params[] = $direction_filter;
 }
+
+
 
 // Получаем общее количество документов для пагинации
 $count_sql = "SELECT COUNT(*) as total FROM documents d WHERE 1=1" . 
@@ -64,10 +50,6 @@ try {
 } catch (PDOException $e) {
     die("Ошибка при получении документов: " . $e->getMessage());
 }
-
-// Получаем уникальные типы и статусы для фильтров
-$doc_types = $pdo->query("SELECT DISTINCT doc_type FROM documents")->fetchAll(PDO::FETCH_COLUMN);
-$doc_statuses = $pdo->query("SELECT DISTINCT status FROM documents")->fetchAll(PDO::FETCH_COLUMN);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -93,64 +75,7 @@ $doc_statuses = $pdo->query("SELECT DISTINCT status FROM documents")->fetchAll(P
                         <i class="fas fa-plus"></i> Новый документ
                     </a>
                 </div>
-                
-                <!-- Фильтры документов -->
-                <div class="filter-container">
-                    <form method="GET" action="">
-                        <div class="filter-group">
-                            <label class="filter-label">Поиск</label>
-                            <input type="text" name="search" class="filter-input" 
-                                   placeholder="Номер или название..." 
-                                   value="<?php echo htmlspecialchars($search_query); ?>">
-                        </div>
-                        
-                        <div class="filter-group">
-                            <label class="filter-label">Тип документа</label>
-                            <select name="type" class="filter-select">
-                                <option value="">Все типы</option>
-                                <?php foreach ($doc_types as $type): ?>
-                                    <option value="<?php echo htmlspecialchars($type); ?>" 
-                                        <?php echo $type_filter === $type ? 'selected' : ''; ?>>
-                                        <?php echo htmlspecialchars($type); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-
-                        <div class="filter-group">
-                            <label class="filter-label">Направление</label>
-                            <select name="direction" class="filter-select">
-                                <option value="">Все направления</option>
-                                <option value="<?php echo DOC_INCOMING; ?>" <?php echo $direction_filter === DOC_INCOMING ? 'selected' : ''; ?>>Входящие</option>
-                                <option value="<?php echo DOC_OUTGOING; ?>" <?php echo $direction_filter === DOC_OUTGOING ? 'selected' : ''; ?>>Исходящие</option>
-                                <option value="<?php echo DOC_INTERNAL; ?>" <?php echo $direction_filter === DOC_INTERNAL ? 'selected' : ''; ?>>Внутренние</option>
-                            </select>
-                        </div>
-                        
-                        <div class="filter-group">
-                            <label class="filter-label">Статус</label>
-                            <select name="status" class="filter-select">
-                                <option value="">Все статусы</option>
-                                <?php foreach ($doc_statuses as $status): ?>
-                                    <option value="<?php echo htmlspecialchars($status); ?>" 
-                                        <?php echo $status_filter === $status ? 'selected' : ''; ?>>
-                                        <?php echo htmlspecialchars($status); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        
-                        <div class="filter-actions">
-                            <button type="submit" class="btn" style="padding: 0.5rem 1rem;">
-                                <i class="fas fa-filter"></i> Применить
-                            </button>
-                            <a href="documents.php" class="btn" style="padding: 0.5rem 1rem; background-color: var(--navy);">
-                                <i class="fas fa-times"></i> Сбросить
-                            </a>
-                        </div>
-                    </form>
-                </div>
-                
+                                
                 <!-- Таблица документов -->
                 <table class="doc-table">
                     <thead>

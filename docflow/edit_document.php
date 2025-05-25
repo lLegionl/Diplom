@@ -95,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 description = ?,
                 status = ?,
                 file_path = ?,
+                direction = ?,
                 updated_at = NOW()
                 WHERE id = ?
             ");
@@ -105,9 +106,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $description, 
                 $status, 
                 $file_path,
+                $_POST['direction'],
                 $document['id']
-            ]);
-            
+            ]);   
+
             $_SESSION['success'] = "Документ успешно обновлен";
             header('Location: view_document.php?id=' . $document['id']);
             exit();
@@ -162,6 +164,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <option value="Заявление" <?php echo $document['doc_type'] == 'Заявление' ? 'selected' : ''; ?>>Заявление</option>
                             <option value="Счет" <?php echo $document['doc_type'] == 'Счет' ? 'selected' : ''; ?>>Счет</option>
                             <option value="Акт" <?php echo $document['doc_type'] == 'Акт' ? 'selected' : ''; ?>>Акт</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direction" class="form-label">Направление</label>
+                        <select id="direction" name="direction" class="form-control" required>
+                            <option value="<?php echo DOC_INCOMING; ?>" <?php echo $document['direction'] == DOC_INCOMING ? 'selected' : ''; ?>>Входящий</option>
+                            <option value="<?php echo DOC_OUTGOING; ?>" <?php echo $document['direction'] == DOC_OUTGOING ? 'selected' : ''; ?>>Исходящий</option>
+                            <option value="<?php echo DOC_INTERNAL; ?>" <?php echo $document['direction'] == DOC_INTERNAL ? 'selected' : ''; ?>>Внутренний</option>
+                            <option value="<?php echo DOC_INTERNAL; ?>" <?php echo $document['direction'] == DOC_ARCHIVE ? 'selected' : ''; ?>>Архив</option>
                         </select>
                     </div>
                     
