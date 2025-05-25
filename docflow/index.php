@@ -55,9 +55,6 @@ try {
                     <a href="create_document.php" class="btn" style="margin-right: 10px;">
                         <i class="fas fa-plus"></i> Создать документ
                     </a>
-                    <a href="upload.php" class="btn">
-                        <i class="fas fa-upload"></i> Загрузить файл
-                    </a>
                 </div>
             </div>
             

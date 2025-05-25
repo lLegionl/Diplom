@@ -4,6 +4,7 @@ require_once 'config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = sanitize($_POST['username']);
     $password = sanitize($_POST['password']);
+
     
     try {
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
@@ -72,7 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
             
-            <button type="submit" class="btn">Войти</button>
+            <button type="submit" class="btn">Войти</button>    
+            <a href="registration.php">Нет Аккаунта?</a>
         </form>
     </div>
 </body>

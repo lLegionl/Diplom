@@ -173,7 +173,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <option value="<?php echo DOC_INCOMING; ?>" <?php echo $document['direction'] == DOC_INCOMING ? 'selected' : ''; ?>>Входящий</option>
                             <option value="<?php echo DOC_OUTGOING; ?>" <?php echo $document['direction'] == DOC_OUTGOING ? 'selected' : ''; ?>>Исходящий</option>
                             <option value="<?php echo DOC_INTERNAL; ?>" <?php echo $document['direction'] == DOC_INTERNAL ? 'selected' : ''; ?>>Внутренний</option>
-                            <option value="<?php echo DOC_INTERNAL; ?>" <?php echo $document['direction'] == DOC_ARCHIVE ? 'selected' : ''; ?>>Архив</option>
                         </select>
                     </div>
                     

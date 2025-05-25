@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $user['id'],
                     $_POST['direction']
                 ]);
-                            
+
             $_SESSION['success'] = "Документ успешно создан";
             header('Location: ' . URL_ROOT . '/documents.php');
             exit();
