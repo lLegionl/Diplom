@@ -1,0 +1,56 @@
+2025-05-24 20:32:48 - syntax error, unexpected token "if", expecting "function" or "const"
+2025-05-24 20:34:09 - Файл конфигурации базы данных не найден по пути: C:\OSPanel\domains\document-management\core/../../config/database.php
+2025-05-24 20:56:18 - Failed opening required 'C:\OSPanel\domains\document-management\app\controllers/../views/documents/index.php' (include_path='.')
+2025-05-24 20:56:19 - Failed opening required 'C:\OSPanel\domains\document-management\app\controllers/../views/documents/index.php' (include_path='.')
+2025-05-24 20:56:20 - Failed opening required 'C:\OSPanel\domains\document-management\app\controllers/../views/documents/index.php' (include_path='.')
+2025-05-24 20:56:20 - Failed opening required 'C:\OSPanel\domains\document-management\app\controllers/../views/documents/index.php' (include_path='.')
+2025-05-24 20:56:21 - Failed opening required 'C:\OSPanel\domains\document-management\app\controllers/../views/documents/index.php' (include_path='.')
+2025-05-24 20:57:12 - Failed opening required 'C:\OSPanel\domains\document-management\app\controllers/../views/documents/index.php' (include_path='.')
+2025-05-24 21:16:43 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:16:44 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:16:45 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:17:11 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:57 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:57 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:58 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:58 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:58 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:58 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:58 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:58 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:59 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:59 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:59 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:59 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:59 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:21:59 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:00 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:00 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:00 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:00 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:03 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:04 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:04 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:05 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:06 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:06 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:07 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:07 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:08 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:08 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-24 21:22:09 - Файл конфигурации не найден по пути: C:\OSPanel\domains\document-management\core\..\..\config\database.php
+2025-05-25 14:55:02 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 14:56:49 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 14:56:50 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 14:56:50 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 14:56:50 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 14:56:51 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 14:58:33 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\assets\document-management\core\..\..\config\database.php
+2025-05-25 15:07:14 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\document-management\core\..\..\config\database.php
+2025-05-25 15:08:25 - Файл config/database.php не найден
+2025-05-25 15:08:26 - Файл config/database.php не найден
+2025-05-25 15:08:57 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\document-management\core\..\..\config\database.php
+2025-05-25 15:09:12 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\document-management\core\..\..\config\database.php
+2025-05-25 15:09:12 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\document-management\core\..\..\config\database.php
+2025-05-25 15:09:13 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\document-management\core\..\..\config\database.php
+2025-05-25 15:09:13 - Файл конфигурации не найден по пути: C:\OSPanel\home\Diplom\public\document-management\core\..\..\config\database.php
