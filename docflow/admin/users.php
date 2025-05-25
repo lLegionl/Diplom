@@ -43,52 +43,7 @@ if (isset($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление пользователями | <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Все стили из предыдущих страниц плюс дополнительные */
-        
-        .admin-container {
-            flex: 1;
-            padding: 2rem;
-        }
-        
-        .user-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-        
-        .user-table th, .user-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-        }
-        
-        .user-table th {
-            color: var(--light-blue);
-            font-weight: 600;
-        }
-        
-        .role-admin {
-            color: #dc3545;
-            font-weight: 600;
-        }
-        
-        .role-manager {
-            color: #fd7e14;
-            font-weight: 600;
-        }
-        
-        .role-user {
-            color: #20c997;
-            font-weight: 600;
-        }
-        
-        .last-login {
-            font-size: 0.8rem;
-            color: var(--text-dark);
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <?php include '../includes/header.php'; ?>
@@ -164,4 +119,56 @@ if (isset($_GET['delete'])) {
         </main>
     </div>
 </body>
+    <script>
+        // Обработчик для выпадающего меню документов
+        document.getElementById('documents-menu').addEventListener('click', function(e) {
+            // Предотвращаем переход по ссылке если кликнули на сам пункт меню
+            if (e.target.tagName !== 'A') {
+                this.classList.toggle('active');
+                
+                // Поворачиваем иконку стрелки
+                const icon = this.querySelector('.fa-chevron-down');
+                if (this.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+        
+        // Закрываем меню при клике вне его
+        document.addEventListener('click', function(e) {
+            const documentsMenu = document.getElementById('documents-menu');
+            if (!documentsMenu.contains(e.target)) {
+                documentsMenu.classList.remove('active');
+                documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Обработчик для выпадающего меню Администратора
+        document.getElementById('admin-menu').addEventListener('click', function(e) {
+            // Предотвращаем переход по ссылке если кликнули на сам пункт меню
+            if (e.target.tagName !== 'A') {
+                this.classList.toggle('active');
+                
+                // Поворачиваем иконку стрелки
+                const icon = this.querySelector('.fa-chevron-down');
+                if (this.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+        
+        // Закрываем меню при клике вне его
+        document.addEventListener('click', function(e) {
+            const documentsMenu = document.getElementById('admin-menu');
+            if (!documentsMenu.contains(e.target)) {
+                documentsMenu.classList.remove('active');
+                documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+            }
+        });
+    </script>
+
 </html>

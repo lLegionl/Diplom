@@ -37,98 +37,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход в систему | <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --dark-blue: #0a192f;
-            --light-blue: #64ffda;
-            --text-light: #ccd6f6;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<style>
+    body {
             background-color: var(--dark-blue);
             color: var(--text-light);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-        }
-        
-        .login-container {
-            background-color: rgba(23, 42, 69, 0.9);
-            padding: 2.5rem;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
-        .login-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .login-header h1 {
-            color: var(--light-blue);
-            margin-bottom: 0.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: rgba(10, 25, 47, 0.5);
-            border: 1px solid rgba(100, 255, 218, 0.2);
-            border-radius: 5px;
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--light-blue);
-        }
-        
-        .btn {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: var(--light-blue);
-            color: var(--dark-blue);
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: rgba(100, 255, 218, 0.8);
-        }
-        
-        .error-message {
-            color: #ff6b6b;
-            margin-top: 1rem;
-            text-align: center;
-        }
-    </style>
-</head>
+
+    }
+</style>
 <body>
     <div class="login-container">
         <div class="login-header">

@@ -97,7 +97,7 @@ try {
             </div>
         </main>
     </div>
-
+</body>
     <script>
         // Обработчик для выпадающего меню документов
         document.getElementById('documents-menu').addEventListener('click', function(e) {
@@ -149,6 +149,4 @@ try {
             }
         });
     </script>
-
-</body>
 </html>

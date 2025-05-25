@@ -1,3 +1,31 @@
+        /* login.php */
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-header h1 {
+            color: var(--light-blue);
+            margin-bottom: 0.5rem;
+        }
+
+
+        .login-container {
+            background-color: rgba(23, 42, 69, 0.9);
+            padding: 2.5rem;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
         /* Основные цвета */
         :root {
             --dark-blue: #0a192f;     /* Основной темно-синий */
@@ -35,6 +63,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--light-blue);
+            text-decoration: none;
         }
         
         /* Основной контейнер */
@@ -425,4 +454,147 @@
             padding: 0.8rem;
             background-color: rgba(100, 255, 218, 0.1);
             border-radius: 5px;
+        }
+
+        /* view_document.php*/
+        
+        .document-container {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .document-card {
+            background-color: var(--navy);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .document-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        
+        .document-title {
+            color: var(--light-blue);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .document-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+        
+        .document-meta-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .document-meta-item i {
+            margin-right: 0.5rem;
+            color: var(--light-blue);
+        }
+        
+        .document-content {
+            margin-bottom: 2rem;
+        }
+        
+        .document-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        
+        .document-file {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: rgba(10, 25, 47, 0.5);
+            border-radius: 5px;
+            border: 1px dashed rgba(100, 255, 218, 0.3);
+        }
+        
+        .file-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .file-info i {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--light-blue);
+        }
+        
+        .file-details {
+            flex: 1;
+        }
+        
+        .file-name {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .file-size {
+            color: var(--text-dark);
+            font-size: 0.8rem;
+        }
+
+        /* Admin */
+        
+        .admin-container {
+            flex: 1;
+            padding: 2rem;
+        }
+        
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        
+        .user-table th, .user-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .user-table th {
+            color: var(--light-blue);
+            font-weight: 600;
+        }
+        
+        .role-admin {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .role-manager {
+            color: #fd7e14;
+            font-weight: 600;
+        }
+        
+        .role-user {
+            color: #20c997;
+            font-weight: 600;
+        }
+        
+        .last-login {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .password-note {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            margin-top: 0.5rem;
         }

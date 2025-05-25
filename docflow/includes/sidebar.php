@@ -43,9 +43,8 @@
                 <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.8rem;"></i>
             </div>
             <ul class="dropdown-menu">
-                <li><a href="admin/users.php">Пользователи</a></li>
-                <li><a href="admin/add_user.php">Добавление пользователя</a></li>
-                <li><a href="user.php"></a></li>
+                <li><a href="users.php"><i class="fas fa-users"></i> Пользователи</a></li>
+                <li><a href="add_user.php"><i class="fas fa-user-plus"></i> Добавление пользователя</a></li>
             </ul>
         </li>
         <?php endif; ?>

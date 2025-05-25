@@ -6,6 +6,6 @@ session_unset();
 session_destroy();
 
 // Перенаправляем на страницу входа
-header('Location: ' . URL_ROOT . '/login.php');
+header('Location: http://diplom/docflow/login.php');
 exit();
 ?>

@@ -38,100 +38,6 @@ try {
     <title>Просмотр документа | <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Все стили из предыдущих страниц плюс дополнительные */
-        
-        .document-container {
-            flex: 1;
-            padding: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .document-card {
-            background-color: var(--navy);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border: 1px solid rgba(100, 255, 218, 0.1);
-        }
-        
-        .document-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
-        .document-title {
-            color: var(--light-blue);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .document-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-        }
-        
-        .document-meta-item {
-            display: flex;
-            align-items: center;
-        }
-        
-        .document-meta-item i {
-            margin-right: 0.5rem;
-            color: var(--light-blue);
-        }
-        
-        .document-content {
-            margin-bottom: 2rem;
-        }
-        
-        .document-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
-        .document-file {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: rgba(10, 25, 47, 0.5);
-            border-radius: 5px;
-            border: 1px dashed rgba(100, 255, 218, 0.3);
-        }
-        
-        .file-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .file-info i {
-            font-size: 2rem;
-            margin-right: 1rem;
-            color: var(--light-blue);
-        }
-        
-        .file-details {
-            flex: 1;
-        }
-        
-        .file-name {
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-        }
-        
-        .file-size {
-            color: var(--text-dark);
-            font-size: 0.8rem;
-        }
-    </style>
 </head>
 <body>
     <!-- Шапка и боковое меню -->
@@ -216,22 +122,55 @@ try {
         </div>
     </div>
 </body>
+    <script>
+        // Обработчик для выпадающего меню документов
+        document.getElementById('documents-menu').addEventListener('click', function(e) {
+            // Предотвращаем переход по ссылке если кликнули на сам пункт меню
+            if (e.target.tagName !== 'A') {
+                this.classList.toggle('active');
+                
+                // Поворачиваем иконку стрелки
+                const icon = this.querySelector('.fa-chevron-down');
+                if (this.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+        
+        // Закрываем меню при клике вне его
+        document.addEventListener('click', function(e) {
+            const documentsMenu = document.getElementById('documents-menu');
+            if (!documentsMenu.contains(e.target)) {
+                documentsMenu.classList.remove('active');
+                documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Обработчик для выпадающего меню Администратора
+        document.getElementById('admin-menu').addEventListener('click', function(e) {
+            // Предотвращаем переход по ссылке если кликнули на сам пункт меню
+            if (e.target.tagName !== 'A') {
+                this.classList.toggle('active');
+                
+                // Поворачиваем иконку стрелки
+                const icon = this.querySelector('.fa-chevron-down');
+                if (this.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+        
+        // Закрываем меню при клике вне его
+        document.addEventListener('click', function(e) {
+            const documentsMenu = document.getElementById('admin-menu');
+            if (!documentsMenu.contains(e.target)) {
+                documentsMenu.classList.remove('active');
+                documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+            }
+        });
+    </script>
 </html>
-<?php
-// Функция для форматирования размера файла
-function formatFileSize($bytes) {
-    if ($bytes >= 1073741824) {
-        return number_format($bytes / 1073741824, 2) . ' GB';
-    } elseif ($bytes >= 1048576) {
-        return number_format($bytes / 1048576, 2) . ' MB';
-    } elseif ($bytes >= 1024) {
-        return number_format($bytes / 1024, 2) . ' KB';
-    } elseif ($bytes > 1) {
-        return $bytes . ' bytes';
-    } elseif ($bytes == 1) {
-        return '1 byte';
-    } else {
-        return '0 bytes';
-    }
-}
-?>
