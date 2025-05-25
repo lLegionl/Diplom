@@ -1,20 +1,4 @@
 <?php
-try {
-    require_once 'config.php';
-    echo "1. Config loaded<br>";
-    
-    requireLogin();
-    echo "2. Login checked<br>";
-    
-    $user = currentUser();
-    echo "3. User loaded: ".$user['username']."<br>";
-    
-    // Остальной код...
-} catch (Exception $e) {
-    die("Error: ".$e->getMessage());
-}
-?>
-<?php
 require_once 'config.php';
 requireLogin();
 

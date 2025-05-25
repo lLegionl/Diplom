@@ -1,16 +1,8 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-// Добавьте в начало config.php
-error_reporting(E_ALL);
-ini_set('display_errors', 0);
-ini_set('log_errors', 1);
-ini_set('error_log', APP_ROOT . '/logs/error.log');
-
 // Защита от сессионной фиксации
 ini_set('session.use_strict_mode', 1);
 ini_set('session.cookie_httponly', 1);
-ini_set('session.cookie_secure', 1); // Только для HTTPS
+ini_set('session.cookie_secure', 0); // Только для HTTPS
 ini_set('session.cookie_samesite', 'Strict');
 
 // Генерация CSRF токена
@@ -26,7 +18,7 @@ function verify_csrf_token($token) {
     return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
 // Настройки базы данных
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'MySQL-8.2');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'docflow');
@@ -34,7 +26,7 @@ define('DB_NAME', 'docflow');
 // Настройки приложения
 define('APP_NAME', 'DOCFLOW');
 define('APP_ROOT', dirname(dirname(__FILE__)));
-define('URL_ROOT', 'http://localhost/docflow');
+define('URL_ROOT', 'http://diplom/docflow');
 define('UPLOAD_DIR', APP_ROOT . '/uploads/');
 
 // Инициализация сессии
