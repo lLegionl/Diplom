@@ -123,31 +123,6 @@ try {
     </div>
 </body>
     <script>
-        // Обработчик для выпадающего меню документов
-        document.getElementById('documents-menu').addEventListener('click', function(e) {
-            // Предотвращаем переход по ссылке если кликнули на сам пункт меню
-            if (e.target.tagName !== 'A') {
-                this.classList.toggle('active');
-                
-                // Поворачиваем иконку стрелки
-                const icon = this.querySelector('.fa-chevron-down');
-                if (this.classList.contains('active')) {
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            }
-        });
-        
-        // Закрываем меню при клике вне его
-        document.addEventListener('click', function(e) {
-            const documentsMenu = document.getElementById('documents-menu');
-            if (!documentsMenu.contains(e.target)) {
-                documentsMenu.classList.remove('active');
-                documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
-            }
-        });
-
         // Обработчик для выпадающего меню Администратора
         document.getElementById('admin-menu').addEventListener('click', function(e) {
             // Предотвращаем переход по ссылке если кликнули на сам пункт меню

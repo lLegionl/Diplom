@@ -260,13 +260,16 @@ $doc_statuses = $pdo->query("SELECT DISTINCT status FROM documents")->fetchAll(P
                 <?php endif; ?>
             </div>
         </main>
-    </div>
-    
+    </div>   
+</body>
     <script>
-        // Обработчик для выпадающего меню документов
-        document.getElementById('documents-menu').addEventListener('click', function(e) {
+        // Обработчик для выпадающего меню Администратора
+        document.getElementById('admin-menu').addEventListener('click', function(e) {
+            // Предотвращаем переход по ссылке если кликнули на сам пункт меню
             if (e.target.tagName !== 'A') {
                 this.classList.toggle('active');
+                
+                // Поворачиваем иконку стрелки
                 const icon = this.querySelector('.fa-chevron-down');
                 if (this.classList.contains('active')) {
                     icon.style.transform = 'rotate(180deg)';
@@ -278,21 +281,11 @@ $doc_statuses = $pdo->query("SELECT DISTINCT status FROM documents")->fetchAll(P
         
         // Закрываем меню при клике вне его
         document.addEventListener('click', function(e) {
-            const documentsMenu = document.getElementById('documents-menu');
+            const documentsMenu = document.getElementById('admin-menu');
             if (!documentsMenu.contains(e.target)) {
                 documentsMenu.classList.remove('active');
                 documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
             }
         });
-        
-        // Подтверждение удаления документа (если добавите эту функцию)
-        document.querySelectorAll('.delete-document').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (!confirm('Вы уверены, что хотите удалить этот документ?')) {
-                    e.preventDefault();
-                }
-            });
-        });
     </script>
-</body>
 </html>

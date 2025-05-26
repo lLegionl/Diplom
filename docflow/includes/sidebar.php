@@ -6,22 +6,22 @@
                 <i class="fas fa-list"></i> 
                 Все документы</a></li>
         <li class="nav-item">
-            <a href="documents_show.php?direction=Входящие" class="nav-link">
+            <a href="<?= URL_ROOT . '/documents_show.php?direction=Входящие'?>" class="nav-link">
                 <i class="fas fa-inbox"></i> 
                 Входящие
             </a></li>
         <li class="nav-item">
-            <a href="documents_show.php?direction=Исходящие" class="nav-link">
+            <a href="<?= URL_ROOT . '/documents_show.php?direction=Исходящие'?>" class="nav-link">
                 <i class="fas fa-paper-plane"></i>
                 Исходящие
             </a></li>
         <li class="nav-item">
-            <a href="documents_show.php?direction=Внутренние" class="nav-link">
+            <a href="<?= URL_ROOT . '/documents_show.php?direction=Внутренние?'?>" class="nav-link">
                 <i class="fas fa-building"></i> 
                 Внутренние
             </a></li>
         <li class="nav-item" class="nav-link">
-            <a href="documents_show.php?direction=Архив" class="nav-link">
+            <a href="<?= URL_ROOT . '/documents_show.php?direction=Архив'?>" class="nav-link">
                 <i class="fas fa-archive"></i> 
                 Архив
             </a></li>
@@ -54,8 +54,8 @@
                 <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.8rem;"></i>
             </div>
             <ul class="dropdown-menu">
-                <li><a href="users.php"><i class="fas fa-users"></i> Пользователи</a></li>
-                <li><a href="add_user.php"><i class="fas fa-user-plus"></i> Добавление пользователя</a></li>
+                <li><a href="<?= URL_ROOT . '/admin/users.php'?>"><i class="fas fa-users"></i> Пользователи</a></li>
+                <li><a href="<?= URL_ROOT . '/admin/add_user.php'?>"><i class="fas fa-user-plus"></i> Добавление пользователя</a></li>
             </ul>
         </li>
         <?php endif; ?>

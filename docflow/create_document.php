@@ -146,9 +146,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </body>
-        <script>
-        // Обработчик для выпадающего меню документов
-        document.getElementById('documents-menu').addEventListener('click', function(e) {
+    <script>
+        // Обработчик для выпадающего меню Администратора
+        document.getElementById('admin-menu').addEventListener('click', function(e) {
             // Предотвращаем переход по ссылке если кликнули на сам пункт меню
             if (e.target.tagName !== 'A') {
                 this.classList.toggle('active');
@@ -165,12 +165,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Закрываем меню при клике вне его
         document.addEventListener('click', function(e) {
-            const documentsMenu = document.getElementById('documents-menu');
+            const documentsMenu = document.getElementById('admin-menu');
             if (!documentsMenu.contains(e.target)) {
                 documentsMenu.classList.remove('active');
                 documentsMenu.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
             }
         });
     </script>
-
 </html>
