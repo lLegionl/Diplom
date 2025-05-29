@@ -57,14 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Обработка загрузки нового файла (если есть)
     $file_path = $document['file_path'];
     if (isset($_FILES['document_file']) && $_FILES['document_file']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = UPLOAD_DIR;
+        $upload_dir = __DIR__ . '/uploads/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
         
         // Удаляем старый файл, если он есть
-        if ($file_path && file_exists(UPLOAD_DIR . basename($file_path))) {
-            unlink(UPLOAD_DIR . basename($file_path));
+        if ($file_path && file_exists(__DIR__ . '/' . $file_path)) {
+            unlink(__DIR__ . '/' . $file_path);
         }
         
         $file_name = uniqid() . '_' . basename($_FILES['document_file']['name']);
@@ -76,15 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Ошибка при загрузке файла";
         }
     }
-    
+
     // Удаление файла, если запрошено
     if (isset($_POST['delete_file']) && $_POST['delete_file'] == '1' && $file_path) {
-        if (file_exists(UPLOAD_DIR . basename($file_path))) {
-            unlink(UPLOAD_DIR . basename($file_path));
+        if (file_exists(__DIR__ . '/' . $file_path)) {
+            unlink(__DIR__ . '/' . $file_path);
         }
         $file_path = null;
-    }
-    
+    }   
+     
     if (!isset($error)) {
         try {
             $stmt = $pdo->prepare("

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Обработка загрузки файла
     $file_path = null;
     if (isset($_FILES['document_file']) && $_FILES['document_file']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = UPLOAD_DIR;  // Это абсолютный путь на сервере (например, /var/www/docflow/uploads/)
+        $upload_dir = __DIR__ . '/uploads/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
@@ -23,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $target_path = $upload_dir . $file_name;
         
         if (move_uploaded_file($_FILES['document_file']['tmp_name'], $target_path)) {
-            $file_path = '/uploads/' . $file_name;  // Относительный путь от корня сайта
+            $file_path = 'uploads/' . $file_name;
         } else {
             $error = "Ошибка при загрузке файла";
         }
-    }    
+    }
     if (!isset($error)) {
         try {
                 $stmt = $pdo->prepare("
