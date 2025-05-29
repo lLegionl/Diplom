@@ -19,6 +19,9 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(100, 255, 218, 0.2);
         }
+		.login-container a {
+            color: #fff;
+		}
 
         .error-message {
             color: #ff6b6b;
@@ -689,6 +692,11 @@
             background-color: rgba(81, 207, 102, 0.1);
             border-radius: 4px;
         }
+		@media (max-width: 768px) {
+		/* Общие настройки */
+		body {
+		font-size: 14px;
+		}
 		/* Шапка */
 		header {
 			padding: 0.8rem 1rem;
@@ -920,6 +928,11 @@
 			.doc-table td:nth-child(5) {
 				display: none;
 			}
+		}
+		@media (max-width: 400px) {
+		.document-title,
+		.form-title {
+		font-size: 1.2rem;
 		}
 		.btn {
 			padding: 0.6rem;

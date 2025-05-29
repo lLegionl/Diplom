@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST" action="">
             <div class="form-group">
                 <label for="username">Имя пользователя</label>
-                <input type="text" id="username" name="username" class="form-control" required>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Логин" required>
             </div>
 
             <div class="form-group">
@@ -91,12 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="form-group">
                 <label for="password">Пароль</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="******" required>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Пароль" required>
             </div>
 
             <div class="form-group">
                 <label for="password">Подтверждение пароля</label>
-                <input type="password" id="password_repeat" name="password_repeat" class="form-control" placeholder="******" required>
+                <input type="password" id="password_repeat" name="password_repeat" class="form-control" placeholder="Подтверждение пароля" required>
             </div>
 
             <button type="submit" class="btn">Зарегистрироваться</button>
