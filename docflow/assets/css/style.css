@@ -689,4 +689,248 @@
             background-color: rgba(81, 207, 102, 0.1);
             border-radius: 4px;
         }
+		/* Шапка */
+		header {
+			padding: 0.8rem 1rem;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
+		.logo {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Основной контейнер */
+		.container {
+			flex-direction: column;
+		}
+
+		/* Боковая панель */
+		.sidebar {
+			width: 100%;
+			padding: 1rem;
+			border-right: none;
+			border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+		}
+
+		.nav-menu {
+			margin-top: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+
+		.nav-item {
+			margin-bottom: 0;
+		}
+
+		.nav-link {
+			padding: 0.5rem;
+			font-size: 0.9rem;
+		}
+
+		.dropdown-menu {
+			position: absolute;
+			background-color: var(--navy);
+			z-index: 100;
+			min-width: 180px;
+			margin-left: 0;
+			border-left: none;
+			padding-left: 0;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+		}
+
+		/* Основное содержимое */
+		.main-content {
+			padding: 1rem;
+		}
+
+		/* Карточки */
+		.card {
+			padding: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.card-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.card-title {
+			font-size: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Таблицы */
+		.doc-table, .user-table {
+			display: block;
+			overflow-x: auto;
+			white-space: nowrap;
+		}
+
+		.doc-table th, .doc-table td,
+		.user-table th, .user-table td {
+			padding: 8px 10px;
+			font-size: 0.85rem;
+		}
+
+		/* Формы */
+		.form-container, .account-container, .document-container {
+			padding: 1rem;
+		}
+
+		.form-card, .document-card {
+			padding: 1rem;
+		}
+
+		.form-group {
+			margin-bottom: 1rem;
+		}
+
+		.form-control {
+			padding: 0.6rem;
+		}
+
+		/* Документы */
+		.filter-container {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.filter-group {
+			min-width: 100%;
+		}
+
+		/* Аккаунт */
+		.account-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.account-avatar {
+			margin-right: 0;
+			margin-bottom: 1rem;
+		}
+
+		/* Кнопки */
+		.btn {
+			padding: 0.6rem 1rem;
+			font-size: 0.9rem;
+		}
+
+		.document-actions, .file-preview-actions {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		/* Меню администратора */
+		#admin-menu {
+			width: 100%;
+		}
+
+		/* Стили для страниц документов */
+		.document-header,
+		.form-title {
+			padding-bottom: 0.5rem;
+			margin-bottom: 1rem;
+		}
+
+		/* Стили для view_document.php */
+		.document-meta {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.document-meta-item {
+			margin-bottom: 0.5rem;
+		}
+
+		.document-actions .btn {
+			width: 100%;
+			text-align: center;
+			margin-left: 0 !important;
+		}
+
+		.file-info {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.file-info .btn {
+			margin-top: 1rem;
+			width: 100%;
+		}
+
+		/* Стили для edit_document.php и create_document.php */
+		.file-preview-info {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.file-preview-actions .btn {
+			width: 100%;
+			margin-bottom: 0.5rem;
+		}
+
+		.form-group button[type="submit"],
+		.form-group a.btn {
+			width: 100%;
+			margin-left: 0 !important;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Стили для documents.php и documents_show.php */
+		.card-header .btn {
+			margin-top: 1rem;
+			width: 100%;
+		}
+
+		.filter-actions {
+			flex-direction: column;
+		}
+
+		.filter-actions .btn {
+			width: 100%;
+			margin-bottom: 0.5rem;
+		}
+
+		.action-link {
+			margin-right: 0.5rem;
+		}
+
+		.empty-table {
+			padding: 1rem;
+		}
+
+		.pagination {
+			flex-wrap: wrap;
+			gap: 0.3rem;
+		}
+
+		.page-link {
+			padding: 0.5rem;
+		}
+
+		/* Скрытие некоторых столбцов на очень маленьких экранах */
+		@media (max-width: 480px) {
+			.doc-table th:nth-child(4),
+			.doc-table td:nth-child(4),
+			.doc-table th:nth-child(5),
+			.doc-table td:nth-child(5) {
+				display: none;
+			}
+		}
+		.btn {
+			padding: 0.6rem;
+			font-size: 0.9rem;
+		}
+
+		.status {
+			font-size: 0.7rem;
+			padding: 2px 6px;
+		}
+
+		.action-link i {
+			font-size: 0.9rem;
+		}
